@@ -7,12 +7,12 @@ project(Playground LANGUAGES CXX)
 # ---- Fetch CPM ----
 
 set(CPM_DOWNLOAD_LOCATION "${CMAKE_BINARY_DIR}/cmake/CPM.cmake")
-set(CPM_VERSION 0.18)
+set(CPM_DOWNLOAD_VERSION 0.25.1)
 
-if(NOT EXISTS ${CPM_DOWNLOAD_LOCATION})
+if(NOT (EXISTS ${CPM_DOWNLOAD_LOCATION} AND CPM_VERSION STREQUAL CPM_DOWNLOAD_VERSION))
   message(STATUS "Downloading CPM.cmake")
-  file(DOWNLOAD https://github.com/TheLartians/CPM.cmake/releases/download/v${CPM_VERSION}/CPM.cmake ${CPM_DOWNLOAD_LOCATION})
-endif(NOT EXISTS ${CPM_DOWNLOAD_LOCATION})
+  file(DOWNLOAD https://github.com/TheLartians/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake ${CPM_DOWNLOAD_LOCATION})
+endif()
 
 include(${CPM_DOWNLOAD_LOCATION})
 
@@ -21,7 +21,7 @@ include(${CPM_DOWNLOAD_LOCATION})
 CPMAddPackage(
   NAME Greeter
   GITHUB_REPOSITORY TheLartians/ModernCppStarter
-  VERSION 0.9
+  VERSION 0.10
 )
 
 # ---- Create executable ----
