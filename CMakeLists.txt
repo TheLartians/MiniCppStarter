@@ -17,6 +17,7 @@ endif()
 include(${CPM_DOWNLOAD_LOCATION})
 
 # ---- Add dependencies via CPM ----
+# See https://github.com/TheLartians/CPM.cmake for details and examples
 
 CPMAddPackage(
   NAME Greeter
