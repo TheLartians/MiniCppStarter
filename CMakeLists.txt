@@ -3,7 +3,7 @@
 # Build and run by calling: 
 # cmake -S. -Bbuild && cmake --build build && ./build/Playground
 
-cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16)
 
 # ---- Project ----
 
@@ -11,19 +11,19 @@ project(Playground LANGUAGES CXX)
 
 # ---- Fetch CPM ----
 
-set(CPM_DOWNLOAD_VERSION 0.32.0) 
-set(CPM_DOWNLOAD_LOCATION "${CMAKE_BINARY_DIR}/cmake/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
-if(NOT (EXISTS ${CPM_DOWNLOAD_LOCATION}))
-  message(STATUS "Downloading CPM.cmake v${CPM_DOWNLOAD_VERSION}")
-  file(DOWNLOAD https://github.com/cpm-cmake/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake ${CPM_DOWNLOAD_LOCATION})
-endif()
-include(${CPM_DOWNLOAD_LOCATION})
+file(
+  DOWNLOAD
+  https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.38.3/CPM.cmake
+  ${CMAKE_BINARY_DIR}/cmake/CPM.cmake
+  EXPECTED_HASH SHA256=cc155ce02e7945e7b8967ddfaff0b050e958a723ef7aad3766d368940cb15494
+)
+include(${CMAKE_BINARY_DIR}/cmake/CPM.cmake)
 
 # ---- Add dependencies via CPM ----
 # See https://github.com/TheLartians/CPM.cmake for details and examples
 
 # the ModernCppStarter defines an example project called 'Greeter'
-CPMAddPackage("gh:TheLartians/ModernCppStarter@0.17.2")
+CPMAddPackage("gh:TheLartians/ModernCppStarter@0.17.3")
 
 # ---- Create executable ----
 
