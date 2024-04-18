@@ -23,7 +23,7 @@ include(${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
 # See https://github.com/TheLartians/CPM.cmake for details and examples
 
 # the ModernCppStarter defines an example project called 'Greeter'
-CPMAddPackage("gh:TheLartians/ModernCppStarter@0.17.3")
+CPMAddPackage("gh:TheLartians/ModernCppStarter@0.18.0")
 
 # ---- Create executable ----
 
