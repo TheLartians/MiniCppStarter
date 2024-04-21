@@ -1,6 +1,6 @@
 # The MiniCppStarter
 #
-# Build and run by calling: 
+# Build and run by calling:
 # cmake -S. -Bbuild && cmake --build build && ./build/Playground
 
 cmake_minimum_required(VERSION 3.16)
@@ -13,9 +13,9 @@ project(Playground LANGUAGES CXX)
 
 file(
   DOWNLOAD
-  https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.38.3/CPM.cmake
+  https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.39.0/CPM.cmake
   ${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake
-  EXPECTED_HASH SHA256=cc155ce02e7945e7b8967ddfaff0b050e958a723ef7aad3766d368940cb15494
+  EXPECTED_HASH SHA256=66639BCAC9DD2907B2918DE466783554C1334446B9874E90D38E3778D404C2EF
 )
 include(${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
 
@@ -23,7 +23,7 @@ include(${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
 # See https://github.com/TheLartians/CPM.cmake for details and examples
 
 # the ModernCppStarter defines an example project called 'Greeter'
-CPMAddPackage("gh:TheLartians/ModernCppStarter@0.17.3")
+CPMAddPackage("gh:TheLartians/ModernCppStarter@0.18.0")
 
 # ---- Create executable ----
 
